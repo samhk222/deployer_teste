@@ -26,22 +26,21 @@ task('disk_free', function () {
 desc('Deploy your project');
 task('deploy', [
     'showFolder',
-    // 'disk_free',
+    'disk_free',
     'deploy:info',
     'deploy:prepare',
     'deploy:lock',
     'deploy:release',
     'deploy:update_code',
-    // 'deploy:shared',
+    'deploy:shared',
     'deploy:writable',
-    // 'deploy:vendors',
-    // 'deploy:clear_paths',
+    'deploy:vendors',
+    'deploy:clear_paths',
     'deploy:symlink',
     'deploy:unlock',
     'cleanup', # Nâo tenho permissão de root
-    // 'settings_folders_permissions',
-    // 'show_ssh_info',
-    // 'success'
+    'show_ssh_info',
+    'success'
 ]);
 
 
