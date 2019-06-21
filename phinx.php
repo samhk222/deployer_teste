@@ -1,6 +1,6 @@
 <?php
 
-include_once('vender/autoload.php');
+include_once('vendor/autoload.php');
 
 echo "<pre>";
 print_r($_SERVER['DOCUMENT_ROOT']);
