@@ -1,5 +1,4 @@
-# file htaccess 2
 Options +FollowSymLinks
 RewriteEngine on
 
-RewriteBase /
+RewriteRule ^(.*)$ current/$1 [L]
