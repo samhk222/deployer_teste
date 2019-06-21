@@ -2,7 +2,7 @@
 
 use function Deployer\host;
 
-$folder = '/home/samu/public_html/my_test17';
+$folder = '/home/samu/public_html/my_test20';
 
 host('production')
     ->hostname("samuca.com")

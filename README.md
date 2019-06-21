@@ -6,7 +6,7 @@ Copiar a chave publica para dentro de deploy. (Essa chave tem que estar configur
 
 ### htaccess
 
-1. Colocar dentro do {{application_folder}}
+1. Colocar dentro do {{deploy_path}}
 
 ```
 Options +FollowSymLinks
