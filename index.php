@@ -15,6 +15,7 @@
 <body>
     <h1>Hello, world!</h1>
     <div>Agora são <?php echo date('H:i:s'); ?></div>
+    <div>DOCUMENT_ROOT: <?php echo $_SERVER['DOCUMENT_ROOT']; ?></div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
