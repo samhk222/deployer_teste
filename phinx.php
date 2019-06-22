@@ -2,8 +2,11 @@
 
 include_once('vendor/autoload.php');
 
+$dotenv = Dotenv\Dotenv::create($_SERVER['DOCUMENT_ROOT'] . "../.env/donannajulia");
+$dotenv->load();
+
 echo "<pre>";
-print_r($_SERVER['DOCUMENT_ROOT']);
+print_r(getenv('DB_USER'));
 echo "</pre>";
 
 

@@ -7,7 +7,7 @@ $folder = '/home/samu/public_html/my_test20';
 host('production')
     ->hostname("samuca.com")
     ->set('branch', 'master')
-    ->set('cleanup_use_sudo', true)
+    // ->set('cleanup_use_sudo', true)
     ->user('samu')
     ->port(22)
     ->identityFile(dirname(__DIR__) . '/deploy/id_rsa')
