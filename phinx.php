@@ -2,13 +2,6 @@
 
 include_once('vendor/autoload.php');
 
-echo 'Document root: ';
-echo $_SERVER['DOCUMENT_ROOT'] . "\n";
-
-echo "FILE: " . __FILE__ . "\n";
-echo "HOME: " . getenv('HOME') . "\n";
-
-
 if ($_SERVER['DOCUMENT_ROOT']) {
     $dotenvFile = $_SERVER['DOCUMENT_ROOT'] . "/../.env/donannajulia";
 } else {
