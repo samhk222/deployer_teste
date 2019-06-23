@@ -12,7 +12,11 @@ echo "HOME: " . getenv('HOME') . "\n";
 if ($_SERVER['DOCUMENT_ROOT']) {
     $dotenvFile = $_SERVER['DOCUMENT_ROOT'] . "/../.env/donannajulia";
 } else {
-    $dotenvFile = getenv('HOME') . "/.env/donannajulia";
+    if (getenv('USER') == 'samhk222') {
+        $dotenvFile = dirname(dirname(dirname(__FILE__))) . "/.env/donannajulia";
+    } else {
+        $dotenvFile = getenv('HOME') . "/.env/donannajulia";
+    }
 }
 
 $dotenv = Dotenv\Dotenv::create($dotenvFile);
