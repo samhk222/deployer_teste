@@ -22,6 +22,7 @@ host('develop')
     ->identityFile(dirname(__DIR__) . '/deploy/id_rsa')
     ->set('phinx', [
         'environment' => 'development',
+        'configuration' => './phinx.php'
     ])
     ->set('phinx_path', "{{deploy_path}}/current/vendor/bin/phinx")
     ->set('deploy_path', $folder);

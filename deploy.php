@@ -29,7 +29,6 @@ task('disk_free', function () {
 
 desc('Deploy your project');
 task('deploy', [
-    'phinx:migrate',
     'showFolder',
     'disk_free',
     'deploy:info',
@@ -65,6 +64,10 @@ task('fix-rights', function () {
     $files = 'find {{deploy_path}}/. -type f -print0 | xargs -0 chmod 644';
     writeln("Command: {$files}");
     run($files);
+
+    $phinx = "chmod +x {{deploy_path}}/current/vendor/bin/phinx";
+    writeln("Command: {$phinx}");
+    run($phinx);
 });
 
 after('cleanup', 'fix-rights');
