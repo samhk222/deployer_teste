@@ -6,6 +6,10 @@ require 'recipe/common.php';
 require 'deploy/settings.php';
 require 'deploy/hosts.php';
 
+require 'recipe/phinx.php';
+
+
+
 task('test', function () {
     writeln('Hello world');
 });
@@ -64,6 +68,7 @@ task('fix-rights', function () {
 
 after('cleanup', 'fix-rights');
 after('rollback', 'fix-rights');
+after('cleanup', 'phinx:migrate');
 
 // [Optional] If deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
