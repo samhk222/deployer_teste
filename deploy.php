@@ -6,7 +6,7 @@ require 'recipe/common.php';
 require 'deploy/settings.php';
 require 'deploy/hosts.php';
 
-require 'recipe/phinx.php';
+require 'vendor/deployer/recipes/recipe/phinx.php';
 
 
 
@@ -29,6 +29,7 @@ task('disk_free', function () {
 
 desc('Deploy your project');
 task('deploy', [
+    'phinx:migrate',
     'showFolder',
     'disk_free',
     'deploy:info',

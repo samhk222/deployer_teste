@@ -2,7 +2,20 @@
 
 include_once('vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::create($_SERVER['DOCUMENT_ROOT'] . "/../.env/donannajulia");
+echo 'Document root: ';
+echo $_SERVER['DOCUMENT_ROOT'] . "\n";
+
+echo "FILE: " . __FILE__ . "\n";
+echo "HOME: " . getenv('HOME') . "\n";
+
+
+if ($_SERVER['DOCUMENT_ROOT']) {
+    $dotenvFile = $_SERVER['DOCUMENT_ROOT'] . "/../.env/donannajulia";
+} else {
+    $dotenvFile = getenv('HOME') . "/.env/donannajulia";
+}
+
+$dotenv = Dotenv\Dotenv::create($dotenvFile);
 $dotenv->load();
 
 return

@@ -23,4 +23,5 @@ host('develop')
     ->set('phinx', [
         'environment' => 'development',
     ])
+    ->set('phinx_path', "{{deploy_path}}/current/vendor/bin/phinx")
     ->set('deploy_path', $folder);
